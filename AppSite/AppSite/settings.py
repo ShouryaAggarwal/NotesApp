@@ -123,7 +123,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
 
-STATIC_ROOT = '/var/www/souldeux/static'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
