@@ -12,18 +12,18 @@ from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
 
 
-def superuser_only(user):
-    check = (user.is_authenticated and user.is_superuser)
-    return check
+def user_only(user):
+    return user.is_authenticated
 
 
-@user_passes_test(superuser_only, login_url="/")
+
+@user_passes_test(user_only, login_url="/")
 def index_view(request):
     notes = Note.objects.all().order_by('-timestamp')
     return render(request, 'core/index.html', {'notes': notes})
 
 
-@user_passes_test(superuser_only, login_url="/")
+@user_passes_test(user_only, login_url="/")
 def add_note(request):
     id1 = request.GET.get('id', None)
     if id1 is not None:

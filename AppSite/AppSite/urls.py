@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.contrib.auth.views import logout
-from .views import home_view
+from .views import home_view, signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', home_view, name='home'),
     url(r'^notes/', include('core.urls', namespace='notes')),
     url(r'^logout/$', logout, {'next_page': 'home'}, name='logout'),
+    url(r'^signup/$', signup, name='signup'),
 ]
