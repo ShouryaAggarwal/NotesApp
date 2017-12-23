@@ -1,1 +1,1 @@
-web: gunicorn AppSite.AppSite.wsgi --log-file -
+web: gunicorn AppSite.AppSite.wsgi --preload --log-file -
