@@ -1,8 +1,9 @@
 from django import forms
-from core.models import Note
+from django.contrib.auth.forms import UserCreationForm
+from .models import Note
 
 
-class UserRegistrationForm(forms.Form):
+class UserRegistrationForm(UserCreationForm):
     username = forms.CharField(
         required=True,
         label='Username',
@@ -13,7 +14,7 @@ class UserRegistrationForm(forms.Form):
         label='Email',
         max_length=32,
     )
-    password = forms.CharField(
+    password1 = forms.CharField(
         required=True,
         label='Password',
         max_length=32,

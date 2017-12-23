@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+
+
 {% block body %}
 
-
+<link rel="stylesheet" href="{% static 'AppSite/private.css' %}"/>
 
 <div class="jumbotron">
 	<h1 align='center'>Notes!</h1>
 </div>
 
-
 {% block content %}
   <h2>Sign up</h2>
-  <form method="post">
+  <form method="post" class="formext">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign up</button>
+    <button type="submit" class='btn btn-primary btn-lg btn-block'>Sign up</button>
   </form>
-{% endblock %}
 
+{% endblock %}
 
 {% endblock body %}

@@ -467,4 +467,21 @@
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
 }
+
+.credit
+{
+     position: relative;
+     bottom: 20px;
+     font-size: 18px;
+	 font-family: 'Georgia';
+	 background-color: #f2f2f2;
+	 color: black;
+	 border-radius: 15px;
+	 padding: 10px;
+	-moz-box-shadow: 4px 4px 0px 0px #333300;
+	-webkit-box-shadow: 4px 4px 0px 0px #333300;
+	box-shadow: 4px 4px 0px 0px #333300; 
+	 
+}
+
 /*# sourceMappingURL=bootstrap-theme.css.map */

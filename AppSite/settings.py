@@ -29,6 +29,8 @@ ALLOWED_HOSTS = [
     'www.powerful-earth-97625.herokuapp.com',
     'https://powerful-earth-97625.herokuapp.com',
     'powerful-earth-97625.herokuapp.com',
+    'http://127.0.0.1',
+    '127.0.0.1',
 ]
 
 
