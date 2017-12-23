@@ -16,18 +16,20 @@ def user_only(user):
     return user.is_authenticated
 
 
-
 @user_passes_test(user_only, login_url="/")
 def index_view(request):
-    notes = Note.objects.all().order_by('-timestamp')
+    user = request.user
+    notesraw = Note.objects.filter(user=user)
+    notes = notesraw.order_by('-timestamp')
     return render(request, 'core/index.html', {'notes': notes})
 
 
 @user_passes_test(user_only, login_url="/")
 def add_note(request):
+    user = request.user
     id1 = request.GET.get('id', None)
     if id1 is not None:
-        note = get_object_or_404(Note, id=id1)
+        note = get_object_or_404(Note, id=id1, user=user)
     else:
         note = None
 
@@ -39,7 +41,9 @@ def add_note(request):
 
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
-            form.save()
+            note = form.save()
+            note.user = user
+            note.save()
             messages.add_message(request, messages.INFO, 'Note Added!')
             return HttpResponseRedirect(reverse('notes:index'))
 
