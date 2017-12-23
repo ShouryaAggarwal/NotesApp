@@ -25,7 +25,9 @@ SECRET_KEY = '91y(&0z74jf!!un4&cxuo1r@lm$m+p!^@*d+eoq(7@y9epat^^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.powerful-earth-97625.herokuapp.com',
+]
 
 
 # Application definition
